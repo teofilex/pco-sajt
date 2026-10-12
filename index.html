@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pro Concordatia Populorum — Међународна асоцијација националних витешких редова</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --hartija:#F6F4F0; --bela:#FFFFFF;
+  --vuna:#9A9CA0; --vuna-linija:#D8D6D2; --vuna-polje:#6E7176;
+  --mastilo:#1A1B1D; --tekst:#3E4044; --tekst-tih:#6B6E73;
+  --karmin:#C42928; --karmin-tamni:#7E1F1E;
+  --svecani:"EB Garamond", Georgia, serif;
+  --display:"Source Sans 3", -apple-system, "Segoe UI", sans-serif;
+  --telo:"Source Sans 3", -apple-system, "Segoe UI", sans-serif;
+  --mera:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--hartija);color:var(--tekst);font-family:var(--telo);
+  font-size:17.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.omot{max-width:var(--mera);margin:0 auto;padding:0 28px}
+
+h1,h2,h3{font-family:var(--display);color:var(--mastilo);font-weight:600;margin:0;line-height:1.15}
+h2{font-weight:400;letter-spacing:-.015em}
+h2{font-size:clamp(1.9rem,3.4vw,2.9rem)}
+h3{font-size:1.35rem;line-height:1.3}
+p{margin:0 0 1.1em}
+.oznaka{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--karmin);margin:0 0 1.3rem;display:block}
+.oznaka--tiha{color:var(--vuna)}
+.uvodnik{font-size:1.18rem;line-height:1.7}
+.primer{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--tekst-tih);border:1px dashed var(--vuna);
+  padding:1px 7px;border-radius:2px;vertical-align:middle;margin-left:8px}
+.veza{font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:var(--karmin);
+  text-decoration:none;border-bottom:1px solid rgba(196,41,40,.35);padding-bottom:2px}
+.veza:hover{border-bottom-color:var(--karmin)}
+
+/* zaglavlje */
+.zaglavlje{position:sticky;top:0;z-index:50;background:rgba(246,244,240,.95);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--vuna-linija)}
+.zaglavlje__red{display:flex;align-items:center;gap:22px;height:74px}
+.marka{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.marka img{width:36px}
+.marka__ime{font-family:var(--svecani);font-weight:400;font-size:1.06rem;line-height:1.1;color:var(--mastilo)}
+.marka__ime span{display:block;font-family:var(--telo);font-size:.6rem;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--vuna);margin-top:3px}
+.meni{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+.meni>li{position:relative}
+.meni>li>a{display:block;text-decoration:none;font-size:.84rem;letter-spacing:.03em;
+  padding:26px 0;color:var(--tekst)}
+.meni>li:hover>a,.meni>li:focus-within>a{color:var(--karmin)}
+.meni .ima>a::after{content:"";display:inline-block;width:5px;height:5px;margin-left:6px;
+  border-right:1px solid currentColor;border-bottom:1px solid currentColor;
+  transform:rotate(45deg) translateY(-3px)}
+.podmeni{display:none;position:absolute;top:100%;left:-18px;min-width:250px;list-style:none;
+  margin:0;padding:10px 0;background:var(--bela);border:1px solid var(--vuna-linija);
+  border-top:2px solid var(--karmin);box-shadow:0 14px 30px rgba(0,0,0,.08)}
+.meni>li:hover .podmeni,.meni>li:focus-within .podmeni{display:block}
+.podmeni a{display:block;padding:8px 18px;font-size:.9rem;text-decoration:none;color:var(--tekst)}
+.podmeni a:hover{background:var(--hartija);color:var(--karmin)}
+.jezici{display:flex;gap:2px;font-size:.72rem;letter-spacing:.12em}
+.jezici a{text-decoration:none;padding:4px 7px;color:var(--vuna);border-radius:2px}
+.jezici a[aria-current]{color:var(--bela);background:var(--karmin-tamni)}
+.mobilni{display:none}
+
+/* hero */
+.hero{border-bottom:1px solid var(--vuna-linija)}
+.hero__mreza{display:grid;grid-template-columns:1fr 400px}
+.hero__tekst{padding:96px 56px 96px 0}
+.hero__pecat{width:78px;margin-bottom:34px}
+.hero h1{font-family:var(--svecani);font-size:clamp(2.9rem,6.2vw,4.9rem);font-style:italic;font-weight:400;
+  line-height:1.02;margin:0 0 18px;letter-spacing:-.01em}
+.hero__prevod{font-family:var(--display);font-size:1.35rem;color:var(--karmin-tamni);margin:0 0 30px;line-height:1.35}
+.hero__uvod{max-width:52ch;font-size:1.1rem}
+.hero__cinjenice{display:flex;gap:38px;flex-wrap:wrap;margin:38px 0 0;padding-top:26px;
+  border-top:1px solid var(--vuna-linija)}
+.cinjenica dt{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--vuna);margin-bottom:5px}
+.cinjenica dd{margin:0;font-family:var(--display);font-weight:300;font-size:1.6rem;color:var(--mastilo);line-height:1.2}
+.hero__slika{position:relative;overflow:hidden;background:var(--vuna-polje)}
+.hero__slika img{width:100%;height:100%;object-fit:cover;object-position:52% 40%;filter:saturate(.72)}
+.hero__potpis{position:absolute;left:0;right:0;bottom:0;margin:0;padding:34px 22px 16px;
+  background:linear-gradient(to top,rgba(20,21,23,.78),transparent);
+  color:rgba(255,255,255,.9);font-size:.72rem;letter-spacing:.09em;line-height:1.5}
+
+.odeljak{padding:92px 0}
+.odeljak--linija{border-top:1px solid var(--vuna-linija)}
+.odeljak--bela{background:var(--bela);border-top:1px solid var(--vuna-linija);border-bottom:1px solid var(--vuna-linija)}
+.odeljak__glava{max-width:62ch;margin-bottom:54px}
+.odeljak__glava h2{margin-bottom:20px}
+.odeljak__glava p{color:var(--tekst-tih)}
+.arhiva h2{margin-bottom:20px}
+
+/* uvodno slovo */
+.slovo{display:grid;grid-template-columns:260px 1fr;gap:64px;align-items:start}
+.slovo__portret{background:var(--hartija);padding:14px;border:1px solid var(--vuna-linija)}
+.slovo__portret figcaption{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--vuna);margin-top:12px;line-height:1.5}
+.slovo__tekst{font-family:var(--display);font-weight:300;font-size:1.25rem;line-height:1.65;color:var(--mastilo);max-width:60ch}
+.slovo__tekst p{margin-bottom:.9em}
+.slovo__potpis{font-family:var(--telo);font-size:.95rem;color:var(--tekst-tih);margin-top:26px;line-height:1.5}
+.slovo__potpis strong{display:block;font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--mastilo)}
+
+/* nacela */
+.nacela{list-style:none;margin:0;padding:0;max-width:760px}
+.nacela li{padding:18px 0 18px 34px;border-bottom:1px solid var(--vuna-linija);position:relative;
+  font-size:1.12rem;color:var(--mastilo)}
+.nacela li::before{content:"";position:absolute;left:2px;top:28px;width:11px;height:11px;background:var(--karmin);
+  clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+
+/* arhiva */
+.arhiva{background:var(--vuna-polje);color:rgba(255,255,255,.92);padding:96px 0 88px}
+.arhiva h2,.arhiva h3{color:var(--bela)}
+.arhiva .oznaka{color:#E9A9A8}
+.arhiva__uvod{color:rgba(255,255,255,.78);max-width:58ch}
+.traka{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:24px;
+  margin-top:50px;overflow-x:auto;padding-bottom:22px;scroll-snap-type:x mandatory}
+.spis{margin:0;scroll-snap-align:start}
+.spis__list{background:#EDEAE3;padding:9px;box-shadow:0 12px 26px rgba(0,0,0,.22)}
+.spis__list img{width:100%;height:250px;object-fit:cover;object-position:top center}
+.spis__god{font-family:var(--display);font-weight:300;font-size:1.6rem;color:var(--bela);margin:18px 0 4px;line-height:1}
+.spis__opis{font-size:.9rem;line-height:1.55;color:rgba(255,255,255,.76);margin:0}
+.arhiva__vrste{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:56px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18)}
+.vrsta{background:var(--vuna-polje);padding:24px 22px;text-decoration:none;display:block}
+.vrsta:hover{background:#787B80}
+.vrsta strong{display:block;font-family:var(--display);font-weight:600;font-size:1.08rem;color:var(--bela);margin-bottom:4px}
+.vrsta span{font-size:.86rem;color:rgba(255,255,255,.7);line-height:1.5;display:block}
+
+/* istorija */
+.istorija{display:grid;grid-template-columns:1fr 340px;gap:72px;align-items:start}
+.hronologija{list-style:none;margin:0;padding:0}
+.hronologija li{display:grid;grid-template-columns:136px 1fr;gap:28px;padding:19px 0;
+  border-bottom:1px solid var(--vuna-linija);align-items:baseline}
+.hronologija time{font-family:var(--display);font-weight:300;font-size:1.35rem;font-variant-numeric:tabular-nums;color:var(--karmin-tamni);line-height:1}
+.hronologija p{margin:0}
+.knjiga{background:var(--bela);border:1px solid var(--vuna-linija);padding:30px 28px;position:sticky;top:104px}
+.knjiga__korice{display:block;width:100%;padding:0;border:0;cursor:zoom-in;margin-bottom:22px;aspect-ratio:210/148;
+  background:#A9A9A9;box-shadow:0 10px 22px rgba(0,0,0,.14);overflow:hidden;transition:transform .3s ease}
+.knjiga__korice:hover{transform:translateY(-3px)}
+.knjiga__korice img{width:100%;height:100%;object-fit:cover}
+.knjiga p{font-size:.95rem;color:var(--tekst-tih)}
+.knjiga__jezici{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.knjiga__jezici a{font-size:.78rem;text-decoration:none;border:1px solid var(--vuna-linija);
+  padding:5px 11px;color:var(--tekst)}
+.knjiga__jezici a:hover{border-color:var(--karmin);color:var(--karmin)}
+
+.majstori{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:80px;padding-top:56px;border-top:1px solid var(--vuna-linija)}
+.majstor{margin:0;text-align:center}
+.majstor img{width:100%;max-width:240px;margin:0 auto 18px;aspect-ratio:3/4;object-fit:cover;mix-blend-mode:multiply}
+.majstor h3{font-size:1.3rem}
+.majstor p{font-size:.85rem;letter-spacing:.14em;color:var(--vuna);margin:4px 0 0}
+
+/* ceremonije */
+.ceremonije{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.ceremonija{margin:0}
+.ceremonija__slika{overflow:hidden;aspect-ratio:16/10;background:var(--vuna-linija)}
+.ceremonija__slika img{width:100%;height:100%;object-fit:cover;filter:saturate(.8);transition:transform .5s ease}
+.ceremonija:hover img{transform:scale(1.03)}
+.ceremonija figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding:14px 0 0;border-bottom:1px solid var(--vuna-linija);padding-bottom:12px}
+.ceremonija b{font-family:var(--display);font-weight:600;font-size:1.1rem;color:var(--mastilo)}
+.ceremonija span{font-size:.78rem;letter-spacing:.1em;color:var(--vuna);white-space:nowrap}
+.ceremonije__dno{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+  margin-top:44px;color:var(--tekst-tih);font-size:.98rem}
+
+/* ustrojstvo */
+.sema{display:grid;gap:0;justify-items:center;margin-bottom:70px}
+.sema__red{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;padding:26px 0}
+.sema__red + .sema__red::before{content:"";position:absolute;top:0;left:50%;width:1px;height:26px;background:var(--karmin)}
+.sema__red--sa-linijom{border-top:1px solid var(--karmin);padding-top:26px;margin-top:26px}
+.cvor{background:var(--bela);border:1px solid var(--vuna-linija);padding:12px 20px;text-align:center;min-width:150px}
+.cvor b{display:block;font-family:var(--display);font-weight:600;font-size:1rem;color:var(--mastilo);line-height:1.25}
+.cvor small{font-size:.74rem;color:var(--tekst-tih);letter-spacing:.03em}
+.cvor--vrh{background:var(--mastilo);border-color:var(--mastilo);padding:16px 34px}
+.cvor--vrh b{color:var(--bela);font-size:1.3rem}
+.cvor--vrh small{color:var(--vuna)}
+.cvor--nac{border-top:2px solid var(--karmin)}
+
+.rukovodstvo{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--mastilo);margin-bottom:70px}
+.funkcija{padding:24px 26px 24px 0;border-bottom:1px solid var(--vuna-linija)}
+.funkcija small{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--karmin);margin-bottom:6px}
+.funkcija b{font-family:var(--display);font-weight:400;font-size:1.3rem;color:var(--mastilo)}
+
+.udruzenja{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.zemlja{background:var(--bela);border:1px solid var(--vuna-linija);padding:28px 24px 24px;display:flex;flex-direction:column}
+.zemlja h3{margin-bottom:4px}
+.zemlja__nivo{font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--vuna);margin:0 0 14px}
+.zemlja p{font-size:.94rem;color:var(--tekst-tih);margin:0 0 16px}
+.zemlja .veza{margin-top:auto;align-self:flex-start}
+
+.registracija{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px}
+.reg{border:1px solid var(--vuna-linija);padding:26px 28px;background:var(--hartija)}
+.reg h3{font-size:1.15rem;margin-bottom:14px}
+.reg dl{margin:0;display:grid;grid-template-columns:150px 1fr;row-gap:6px;font-size:.94rem}
+.reg dt{color:var(--tekst-tih)}
+.reg dd{margin:0;color:var(--mastilo);font-variant-numeric:tabular-nums}
+
+/* aktivnosti */
+.vesti{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.vest{margin:0}
+.vest__slika{overflow:hidden;background:var(--vuna-linija);aspect-ratio:3/2}
+.vest__slika img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.vest:hover .vest__slika img{transform:scale(1.03)}
+.vest__meta{display:flex;gap:12px;margin:20px 0 10px;font-size:.7rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--vuna)}
+.vest__meta em{font-style:normal;color:var(--karmin)}
+.vest h3{font-size:1.2rem;margin-bottom:8px}
+.vest p{font-size:.95rem;color:var(--tekst-tih);margin:0}
+.vrste-akt{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 40px;padding:0;list-style:none}
+.vrste-akt a{display:block;font-size:.84rem;text-decoration:none;padding:6px 14px;border:1px solid var(--vuna-linija);color:var(--tekst);background:var(--bela)}
+.vrste-akt a[aria-current]{border-color:var(--mastilo);background:var(--mastilo);color:var(--bela)}
+
+.galerija{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;grid-auto-flow:dense;gap:12px;margin-top:70px}
+.galerija figure{margin:0;overflow:hidden;background:var(--vuna-linija);position:relative}
+.galerija img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
+.galerija figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 8px;
+  background:linear-gradient(to top,rgba(20,21,23,.72),transparent);color:#fff;font-size:.7rem;letter-spacing:.08em}
+.g-v{grid-row:span 2}
+.g-s{grid-column:span 2}
+.g-sv{grid-column:span 2;grid-row:span 2}
+
+/* obelezja */
+.obelezja{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.obelezja__slike{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:12px}
+.obelezja__slike figure{margin:0;overflow:hidden;background:var(--vuna-linija)}
+.obelezja__slike img{width:100%;height:100%;object-fit:cover}
+.obelezja__slike .visoka{grid-row:span 2}
+.obelezja__slike .visoka img{object-position:center 30%}
+.spisak-obelezja{columns:2;column-gap:28px;list-style:none;padding:0;margin:20px 0 34px;font-size:.98rem}
+.spisak-obelezja li{padding:6px 0;border-bottom:1px solid var(--vuna-linija);break-inside:avoid}
+.himna{display:flex;align-items:center;gap:18px;background:var(--mastilo);color:var(--bela);padding:20px 24px}
+.himna__dugme{flex:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.4);
+  display:grid;place-items:center;background:transparent;color:var(--bela);cursor:pointer}
+.himna__dugme:hover{border-color:var(--karmin);background:var(--karmin)}
+.himna b{display:block;font-family:var(--display);font-weight:600;font-size:1.08rem}
+.himna small{color:var(--vuna);font-size:.8rem}
+.himna{flex-wrap:wrap}
+.himna__dugme svg[hidden]{display:none}
+.himna__info{flex:1;min-width:180px}
+.himna__traka{flex-basis:100%;display:flex;align-items:center;gap:12px;margin-top:4px}
+.himna__vreme{font-size:.74rem;color:var(--vuna);font-variant-numeric:tabular-nums;min-width:86px;text-align:right}
+.himna__napredak{flex:1;height:3px;background:rgba(255,255,255,.18);position:relative;cursor:pointer}
+.himna__napredak i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--karmin)}
+.himna__delovi{flex-basis:100%;display:flex;gap:6px;margin-top:6px}
+.himna__delovi button{font:inherit;font-size:.72rem;letter-spacing:.08em;background:transparent;color:rgba(255,255,255,.7);
+  border:1px solid rgba(255,255,255,.22);padding:4px 10px;cursor:pointer}
+.himna__delovi button:hover,.himna__delovi button[aria-pressed="true"]{border-color:var(--karmin);color:#fff}
+
+/* clanstvo */
+.clanstvo{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.uslovi{list-style:none;margin:0 0 30px;padding:0}
+.uslovi li{padding:13px 0;border-bottom:1px solid var(--vuna-linija);display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:1rem}
+.uslovi li span{color:var(--karmin)}
+.zakletva{margin:0 0 30px;background:var(--bela);border-left:2px solid var(--karmin);padding:32px 34px;
+  font-family:var(--display);font-weight:300;font-size:1.2rem;line-height:1.6;color:var(--mastilo)}
+.zakletva cite{display:block;font-family:var(--telo);font-style:normal;font-size:.72rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--vuna);margin-top:18px}
+.obrasci{list-style:none;margin:0;padding:0;border-top:1px solid var(--vuna-linija)}
+.obrasci a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--vuna-linija);
+  text-decoration:none;font-size:.98rem;color:var(--mastilo)}
+.obrasci a span{font-size:.72rem;letter-spacing:.14em;color:var(--vuna)}
+.obrasci a:hover{color:var(--karmin)}
+
+/* vesti i planovi */
+.najave{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--mastilo)}
+.najava{padding:26px 28px 26px 0;border-bottom:1px solid var(--vuna-linija)}
+.najava time{display:block;font-family:var(--display);font-weight:300;font-size:1.5rem;color:var(--karmin-tamni);margin-bottom:6px}
+.najava h3{font-size:1.15rem;margin-bottom:6px}
+.najava p{font-size:.93rem;color:var(--tekst-tih);margin:0}
+
+/* podnozje */
+.podnozje{background:var(--mastilo);color:rgba(255,255,255,.72);padding:76px 0 34px;font-size:.92rem}
+.podnozje__mreza{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.podnozje h4{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--vuna);margin:0 0 16px;font-weight:600}
+.podnozje__ime{font-family:var(--display);font-weight:600;font-size:1.08rem;color:var(--bela);margin:0 0 12px;line-height:1.3}
+.podnozje a{color:rgba(255,255,255,.72);text-decoration:none}
+.podnozje a:hover{color:var(--bela)}
+.podnozje ul{list-style:none;margin:0;padding:0}
+.podnozje li{margin-bottom:8px}
+.podnozje__dno{margin-top:56px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.78rem;color:rgba(255,255,255,.45)}
+.podnozje__moto{font-family:var(--svecani);font-style:italic;font-size:.95rem;color:rgba(255,255,255,.6)}
+
+.veza--dugme{background:none;border:0;border-bottom:1px solid rgba(196,41,40,.35);font:inherit;font-size:.8rem;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--karmin);cursor:pointer;padding:0 0 2px}
+.citac{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;z-index:100;background:#141517;display:none;
+  grid-template-rows:auto minmax(0,1fr) auto;color:#fff}
+.citac[open]{display:grid}
+.citac__vrh{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;font-size:.8rem;letter-spacing:.12em;color:var(--vuna)}
+.citac__zatvori{background:none;border:1px solid rgba(255,255,255,.25);color:#fff;font:inherit;font-size:.78rem;
+  letter-spacing:.12em;padding:6px 12px;cursor:pointer}
+.citac__strane{position:relative;display:grid;place-items:center;padding:0 70px;min-height:0}
+.citac__strane img{display:none;max-width:min(100%,1000px);max-height:calc(100dvh - 130px);width:auto;height:auto;
+  aspect-ratio:210/148;object-fit:contain;background:#fff;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.citac__strane img.tu{display:block}
+.citac__str{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;
+  background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.3rem;cursor:pointer}
+.citac__str:hover{border-color:var(--karmin);background:var(--karmin)}
+.citac__str--naz{left:14px}.citac__str--nap{right:14px}
+.citac__dno{padding:14px 22px;text-align:center;font-size:.8rem;color:var(--vuna);font-variant-numeric:tabular-nums}
+@media (max-width:620px){.citac__strane{padding:0 10px}.citac__str{top:auto;bottom:-56px;transform:none}}
+.pojava{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.pojava.vidi{opacity:1;transform:none}
+
+@media (max-width:1100px){
+  .meni{display:none}
+  .mobilni{display:block;position:relative}
+  .mobilni summary{list-style:none;cursor:pointer;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    padding:8px 12px;border:1px solid var(--vuna-linija)}
+  .mobilni summary::-webkit-details-marker{display:none}
+  .mobilni ul{position:absolute;right:0;top:calc(100% + 10px);width:270px;list-style:none;margin:0;padding:10px 0;
+    background:var(--bela);border:1px solid var(--vuna-linija);border-top:2px solid var(--karmin);box-shadow:0 14px 30px rgba(0,0,0,.1)}
+  .mobilni a{display:block;padding:9px 18px;text-decoration:none;font-size:.95rem}
+}
+@media (max-width:980px){
+  .hero__mreza{grid-template-columns:1fr}
+  .hero__tekst{padding:64px 0 52px}
+  .hero__slika{height:340px}
+  .slovo,.istorija,.obelezja,.clanstvo{grid-template-columns:1fr;gap:44px}
+  .slovo__portret{max-width:240px}
+  .knjiga{position:static}
+  .udruzenja,.arhiva__vrste{grid-template-columns:repeat(2,1fr)}
+  .vesti,.ceremonije{grid-template-columns:repeat(2,1fr)}
+  .rukovodstvo,.najave{grid-template-columns:1fr}
+  .galerija{grid-template-columns:repeat(4,1fr)}
+  .podnozje__mreza{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  body{font-size:17px}
+  .omot{padding:0 20px}
+  .odeljak{padding:64px 0}
+  .arhiva{padding:68px 0 60px}
+  .udruzenja,.arhiva__vrste,.vesti,.ceremonije,.registracija,.majstori{grid-template-columns:1fr}
+  .hronologija li{grid-template-columns:76px 1fr;gap:16px}
+  .hronologija time{font-size:1.15rem}
+  .galerija{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}
+  .g-sv{grid-column:span 2}
+  .spisak-obelezja{columns:1}
+  .reg dl{grid-template-columns:120px 1fr}
+  .podnozje__mreza{grid-template-columns:1fr;gap:32px}
+  .traka{grid-auto-columns:78%}
+  .marka__ime{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+  .pojava{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+:focus-visible{outline:2px solid var(--karmin);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="zaglavlje">
+  <div class="omot zaglavlje__red">
+    <a class="marka" href="#">
+      <img src="img/znak.png" alt="Знак реда">
+      <span class="marka__ime">Pro Concordatia Populorum<span>Ordines Internationales</span></span>
+    </a>
+    <nav aria-label="Главни мени">
+      <ul class="meni">
+        <li class="ima"><a href="#slovo">О реду</a>
+          <ul class="podmeni">
+            <li><a href="#slovo">Уводно слово Великог мајстора</a></li>
+            <li><a href="#red">Мисија и начела</a></li>
+            <li><a href="#registracija">Подаци о регистрацији</a></li>
+            <li><a href="#statut">Статут</a></li>
+            <li><a href="#obelezja">Обележја и химна</a></li>
+          </ul>
+        </li>
+        <li class="ima"><a href="#istorija">Историја</a>
+          <ul class="podmeni">
+            <li><a href="#istorija">Хронологија</a></li>
+            <li><a href="#hronika">PCO Хроника</a></li>
+            <li><a href="#majstori">Велики мајстори</a></li>
+          </ul>
+        </li>
+        <li><a href="#ceremonije">Церемоније</a></li>
+        <li class="ima"><a href="#ustrojstvo">Устројство</a>
+          <ul class="podmeni">
+            <li><a href="#ustrojstvo">Организациона шема</a></li>
+            <li><a href="#rukovodstvo">Руководство и функције</a></li>
+            <li><a href="#udruzenja">Национална удружења</a></li>
+          </ul>
+        </li>
+        <li class="ima"><a href="#aktivnosti">Активности</a>
+          <ul class="podmeni">
+            <li><a href="#aktivnosti">Споразуми</a></li>
+            <li><a href="#aktivnosti">Донације и хуманитарне акције</a></li>
+            <li><a href="#aktivnosti">Изложбе и култура</a></li>
+            <li><a href="#aktivnosti">Интервјуи и медији</a></li>
+          </ul>
+        </li>
+        <li class="ima"><a href="#arhiva">Архива</a>
+          <ul class="podmeni">
+            <li><a href="#arhiva">Документи и повеље</a></li>
+            <li><a href="#arhiva">Захвалнице</a></li>
+            <li><a href="#arhiva">Новински записи</a></li>
+            <li><a href="#galerija">Фотогалерија</a></li>
+            <li><a href="#obrasci">Обрасци</a></li>
+          </ul>
+        </li>
+        <li><a href="#vesti">Вести</a></li>
+      </ul>
+    </nav>
+    <details class="mobilni">
+      <summary>Мени</summary>
+      <ul>
+        <li><a href="#slovo">О реду</a></li>
+        <li><a href="#istorija">Историја</a></li>
+        <li><a href="#ceremonije">Церемоније</a></li>
+        <li><a href="#ustrojstvo">Устројство</a></li>
+        <li><a href="#aktivnosti">Активности</a></li>
+        <li><a href="#arhiva">Архива</a></li>
+        <li><a href="#vesti">Вести</a></li>
+      </ul>
+    </details>
+    <div class="jezici">
+      <a href="#" aria-current="true">СР</a><a href="#">EN</a><a href="#">HU</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="omot hero__mreza">
+    <div class="hero__tekst">
+      <img class="hero__pecat" src="img/znak.png" alt="">
+      <span class="oznaka">Међународна асоцијација националних витешких редова</span>
+      <h1>Conciliis&nbsp;ad&nbsp;pacem</h1>
+      <p class="hero__prevod">Преговорима до мира</p>
+      <p class="hero__uvod">Невладино, непрофитно и хуманитарно братство основано 1961. године, посвећено слози међу народима. Данас окупља национална витешка удружења Србије, Мађарске, Румуније и Црне Горе.</p>
+      <dl class="hero__cinjenice">
+        <div class="cinjenica"><dt>Основан</dt><dd>1961.</dd></div>
+        <div class="cinjenica"><dt>Савез од</dt><dd>2007.</dd></div>
+        <div class="cinjenica"><dt>Инвеституре</dt><dd>20</dd></div>
+        <div class="cinjenica"><dt>Седиште</dt><dd>Београд</dd></div>
+      </dl>
+    </div>
+    <div class="hero__slika">
+      <img src="img/investitura.jpg" alt="Церемонија инвеституре — примање у витешки ред">
+      <p class="hero__potpis">Инвеститура — примање у витешки ред и полагање заклетве пред Великим мајстором</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Уводно слово -->
+<section class="odeljak odeljak--bela" id="slovo">
+  <div class="omot slovo">
+    <figure class="slovo__portret pojava">
+      <img src="img/vm-gardasevic.jpg" alt="Неђељко Гардашевић, цртеж">
+      <figcaption>Неђељко Гардашевић<br>Велики мајстор од 2007.</figcaption>
+    </figure>
+    <div class="pojava">
+      <span class="oznaka">Уводно слово Великог мајстора</span>
+      <div class="slovo__tekst">
+        <p>По мисији којој је посвећен и коју носи у свом називу, али и у срцима својих чланова, витешки ред PCO је јединствен у свету.</p>
+        <p>Живимо у невитешком времену. Управо зато нас мисија обавезује да изнова и у континуитету утичемо на средину у којој живимо и радимо. Задатак који смо добровољно прихватили изузетно је сложен и захтева несебично ангажовање — али је могућ.</p>
+      </div>
+      <p class="slovo__potpis"><strong>Неђељко Гардашевић</strong>Велики мајстор Међународне асоцијације националних витешких редова</p>
+    </div>
+  </div>
+</section>
+
+<!-- Мисија и начела -->
+<section class="odeljak" id="red">
+  <div class="omot">
+    <div class="odeljak__glava pojava">
+      <span class="oznaka">Мисија</span>
+      <h2>Витешки ред за разумевање међу народима</h2>
+      <p class="uvodnik">Слога међу народима је предуслов свеопштег мира, и то неће бити ни брзо ни лако. Храброст, правичност, мудрост, умереност, толерантност и хуманост — а пре свега истрајност — наше су оружје у тој витешкој борби за мир.</p>
+    </div>
+    <span class="oznaka oznaka--tiha pojava">Начела реда</span>
+    <ul class="nacela pojava">
+      <li>Сви народи су равноправни</li>
+      <li>Све расе су равноправне</li>
+      <li>Све религије су равноправне</li>
+      <li>Сви људи су равноправни, без обзира на политичку припадност</li>
+      <li>Нема разлике међу људима због материјалног или друштвеног положаја</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 9. Архива: документи, повеље, захвалнице, новински записи -->
+<section class="arhiva" id="arhiva">
+  <div class="omot">
+    <div class="pojava">
+      <span class="oznaka">Архива</span>
+      <h2>Иза сваког датума стоји документ</h2>
+      <p class="arhiva__uvod">Постоје групе које користе наш назив и наша обележја. Разлика је проверљива: оригинални списи, потписи и печати чувају се у Централном архиву Реда, а овде их приказујемо у целини.</p>
+    </div>
+    <div class="traka pojava">
+      <figure class="spis"><div class="spis__list"><img src="img/dok-kisindzer-1975.jpg" alt="Овера регистрације, 1975."></div>
+        <p class="spis__god">1975.</p><p class="spis__opis">Регистрација удружења у Вашингтону. Оверу извршио државни секретар Хенри Кисинџер.</p></figure>
+      <figure class="spis"><div class="spis__list"><img src="img/dok-blagoslov-1976.jpg" alt="Апостолски благослов, 1976."></div>
+        <p class="spis__god">1976.</p><p class="spis__opis">Апостолски благослов Папе Павла VI.</p></figure>
+      <figure class="spis"><div class="spis__list"><img src="img/dok-valdhajm-1976.jpg" alt="Писмо Курта Валдхајма, 1976."></div>
+        <p class="spis__god">1976.</p><p class="spis__opis">Писмо генералног секретара УН Курта Валдхајма, 21. децембра.</p></figure>
+      <figure class="spis"><div class="spis__list"><img src="img/dok-kmfap-2008.jpg" alt="Споразум са KMFAP, 2008."></div>
+        <p class="spis__god">2008.</p><p class="spis__opis">Споразум о међусобном признавању са Малтешким редом KMFAP, Будимпешта.</p></figure>
+      <figure class="spis"><div class="spis__list"><img src="img/dok-ordo-hungariae-2016.jpg" alt="Споразум са Ordo Hungariae, 2016."></div>
+        <p class="spis__god">2016.</p><p class="spis__opis">Споразум о сарадњи са редом Ordo Hungariae, Сегедин.</p></figure>
+      <figure class="spis"><div class="spis__list"><img src="img/dok-povelja.jpg" alt="Повеља реда"></div>
+        <p class="spis__god">Повеља</p><p class="spis__opis">Изглед повеље која се уручује на инвеститури, на латинском језику.</p></figure>
+    </div>
+    <div class="arhiva__vrste pojava">
+      <a class="vrsta" href="#"><strong>Документи и повеље</strong><span>Оснивачки акти, декларације, споразуми</span></a>
+      <a class="vrsta" href="#"><strong>Захвалнице</strong><span>Признања институција и појединаца</span></a>
+      <a class="vrsta" href="#"><strong>Новински записи</strong><span>Чланци и интервјуи о раду реда</span></a>
+      <a class="vrsta" href="#obrasci"><strong>Обрасци</strong><span>Молба за пријем, изјава о приступању</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Историја + Хроника + Велики мајстори -->
+<section class="odeljak" id="istorija">
+  <div class="omot">
+    <div class="odeljak__glava pojava">
+      <span class="oznaka">Историја</span>
+      <h2>Од Њујорка до Београда</h2>
+      <p>Ред је настао шездесетих година у Америци као покрет слободоумних људи против рата, пренет у Европу 1973. и од тада непрекидно ради под садашњим називом.</p>
+    </div>
+    <div class="istorija">
+      <ol class="hronologija pojava">
+        <li><time>1961.</time><p>Оснивање организације у Сједињеним Америчким Државама, 26. септембра.</p></li>
+        <li><time>1973.</time><p>Покрет прелази у Европу. Ред устоличују у Аустрији проф. Фридрих Фронц и Урсула Фронц.</p></li>
+        <li><time>1976.</time><p>Декларација од 5. децембра, донета у Бечу. Ред се конституише као међународна организација.</p></li>
+        <li><time>1986—1990.</time><p>Национална удружења у Немачкој, Швајцарској, Француској и Мађарској.</p></li>
+        <li><time>2002.</time><p>Прва церемонија у Београду. Оснива се удружење Србије и Црне Горе.</p></li>
+        <li><time>2005.</time><p>Оснивају се удружења у Бугарској и Румунији.</p></li>
+        <li><time>2007.</time><p>Оснивање Савеза у Београду. Неђељко Гардашевић изабран за Великог мајстора.</p></li>
+        <li><time>2014.</time><p>Пререгистрација Савеза у Агенцији за привредне регистре.</p></li>
+        <li><time>2017.</time><p>Међународни форум „PCO — данас и сутра“, Београд.</p></li>
+      </ol>
+      <aside class="knjiga pojava" id="hronika">
+        <button class="knjiga__korice" type="button" data-citac aria-label="Отвори PCO Хронику">
+          <img src="hronika/s-01.jpg" alt="Корице PCO Хронике, 2020.">
+        </button>
+        <h3>PCO Хроника</h3>
+        <p>Сажет и веродостојан приказ организације од настанка до данас, текстом и илустрацијама. Уредник Александар Војновић.</p>
+        <p><button class="veza veza--dugme" type="button" data-citac>Прочитај на сајту →</button></p>
+        <div class="knjiga__jezici">
+          <a href="#">Српски, PDF</a><a href="#">English, PDF</a><a href="#">Magyar, PDF</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="majstori pojava" id="majstori">
+      <figure class="majstor"><img src="img/vm-fronc.jpg" alt="Проф. Фридрих Фронц"><h3>Проф. Фридрих Фронц</h3><p>1976 — 1990</p></figure>
+      <figure class="majstor"><img src="img/vm-luti.jpg" alt="Јан Лути"><h3>Јан Лути</h3><p>1990 — 2007</p></figure>
+      <figure class="majstor"><img src="img/vm-gardasevic.jpg" alt="Неђељко Гардашевић"><h3>Неђељко Гардашевић</h3><p>од 2007</p></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Церемоније -->
+<section class="odeljak odeljak--linija" id="ceremonije">
+  <div class="omot">
+    <div class="odeljak__glava pojava">
+      <span class="oznaka">Церемоније и инвеституре</span>
+      <h2>Двадесет церемонија у седам земаља</h2>
+      <p>Витешки статус додељује Велики мајстор на церемонији пријема, једном годишње, у некој од земаља чланица Савеза. На истој церемонији врше се унапређења у више рангове и додела почасног статуса.</p>
+    </div>
+    <div class="ceremonije pojava">
+      <figure class="ceremonija"><div class="ceremonija__slika"><img src="img/cer-segedin-2016.jpg" alt="Сегедин 2016."></div>
+        <figcaption><b>Сегедин</b><span>16. IV 2016.</span></figcaption></figure>
+      <figure class="ceremonija"><div class="ceremonija__slika"><img src="img/cer-sfantu-2014.jpg" alt="Сфанту Ђорђе 2014."></div>
+        <figcaption><b>Сфанту Ђорђе</b><span>27. IX 2014.</span></figcaption></figure>
+      <figure class="ceremonija"><div class="ceremonija__slika"><img src="img/cer-cetinje-2013.jpg" alt="Цетиње 2013."></div>
+        <figcaption><b>Цетиње</b><span>5. X 2013.</span></figcaption></figure>
+      <figure class="ceremonija"><div class="ceremonija__slika"><img src="img/cer-trnovo-2005.jpg" alt="Велико Трново 2005."></div>
+        <figcaption><b>Велико Трново</b><span>17. IX 2005.</span></figcaption></figure>
+      <figure class="ceremonija"><div class="ceremonija__slika"><img src="img/cer-bec-2004.jpg" alt="Беч 2004."></div>
+        <figcaption><b>Беч</b><span>25. IX 2004.</span></figcaption></figure>
+      <figure class="ceremonija"><div class="ceremonija__slika"><img src="img/cer-beograd-2002.jpg" alt="Београд 2002."></div>
+        <figcaption><b>Београд</b><span>18. V 2002.</span></figcaption></figure>
+    </div>
+    <div class="ceremonije__dno pojava">
+      <span>Србија, Мађарска, Немачка, Румунија, Аустрија, Бугарска и Црна Гора</span>
+      <a class="veza" href="#">Све церемоније →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7, 8. Устројство, руководство, удружења, регистрација -->
+<section class="odeljak odeljak--bela" id="ustrojstvo">
+  <div class="omot">
+    <div class="odeljak__glava pojava">
+      <span class="oznaka">Устројство</span>
+      <h2>Савез и национална удружења</h2>
+      <p>Ред је регистрован као Савез националних удружења. У свакој држави може постојати само једно национално удружење члан Савеза. Статути националних удружења усклађени су са Статутом Савеза.</p>
+    </div>
+
+    <div class="sema pojava" aria-label="Организациона шема">
+      <div class="sema__red"><div class="cvor cvor--vrh"><b>Велики мајстор</b><small>Савез</small></div></div>
+      <div class="sema__red">
+        <div class="cvor"><b>Влада</b><small>Велики капитол</small></div>
+        <div class="cvor"><b>Скупштина</b><small>Савеза</small></div>
+        <div class="cvor"><b>Надзорни одбор</b><small>Савеза</small></div>
+        <div class="cvor"><b>Арбитражни савет</b><small>Савеза</small></div>
+      </div>
+      <div class="sema__red">
+        <div class="cvor cvor--nac"><b>Генерална префектура</b><small>генерални префект, мајор, јуриста, ризничар</small></div>
+        <div class="cvor cvor--nac"><b>Генерална префектура</b><small>у свакој земљи чланици</small></div>
+      </div>
+      <div class="sema__red">
+        <div class="cvor"><b>Велика префектура</b><small>аутономне територије</small></div>
+        <div class="cvor"><b>Префектура</b><small>најмање 5 чланова</small></div>
+      </div>
+    </div>
+
+    <span class="oznaka oznaka--tiha pojava" id="rukovodstvo">Руководство Савеза</span>
+    <div class="rukovodstvo pojava">
+      <div class="funkcija"><small>Велики мајстор</small><b>Неђељко Гардашевић</b></div>
+      <div class="funkcija"><small>Велики канцелар</small><b>Андреј Шлајнинг</b></div>
+      <div class="funkcija"><small>Прва дама</small><b>Урсула Фронц</b></div>
+    </div>
+
+    <div class="udruzenja pojava" id="udruzenja">
+      <article class="zemlja"><h3>Србија</h3><p class="zemlja__nivo">Генерална префектура</p>
+        <p>Удружење „За слогу међу народима“. Седиште Савеза и Централног архива Реда.</p><a class="veza" href="#">Удружење →</a></article>
+      <article class="zemlja"><h3>Мађарска</h3><p class="zemlja__nivo">Генерална префектура</p>
+        <p>Основано 1990. године, домаћин инвеститура у Сегедину.</p><a class="veza" href="#">Удружење →</a></article>
+      <article class="zemlja"><h3>Румунија</h3><p class="zemlja__nivo">Генерална префектура</p>
+        <p>Основано 2005. године, домаћин инвеституре у Сфанту Ђорђу 2014.</p><a class="veza" href="#">Удружење →</a></article>
+      <article class="zemlja"><h3>Црна Гора</h3><p class="zemlja__nivo">Генерална префектура</p>
+        <p>Самостално удружење, домаћин инвеституре на Цетињу 2013.</p><a class="veza" href="#">Удружење →</a></article>
+    </div>
+
+    <div class="registracija pojava" id="registracija">
+      <div class="reg" id="statut">
+        <h3>Савез — подаци о регистрацији</h3>
+        <dl>
+          <dt>Назив</dt><dd>Међународна асоцијација националних витешких редова Pro Concordatia Populorum</dd>
+          <dt>Регистар</dt><dd>Агенција за привредне регистре</dd>
+          <dt>Матични број</dt><dd>28158823</dd>
+          <dt>ПИБ</dt><dd>108773475</dd>
+          <dt>Седиште</dt><dd>Нишка 44, 11050 Београд</dd>
+          <dt>Статут</dt><dd><a class="veza" href="#">Преузми PDF</a></dd>
+        </dl>
+      </div>
+      <div class="reg">
+        <h3>Удружење Србије</h3>
+        <dl>
+          <dt>Назив</dt><dd>Национални витешки ред „За слогу међу народима“</dd>
+          <dt>Матични број</dt><dd>28229895</dd>
+          <dt>ПИБ</dt><dd>110024887</dd>
+          <dt>Основано</dt><dd>14. 4. 2017.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Активности + 9. Фотогалерија -->
+<section class="odeljak" id="aktivnosti">
+  <div class="omot">
+    <div class="odeljak__glava pojava">
+      <span class="oznaka">Активности</span>
+      <h2>Споразуми, донације, изложбе</h2>
+      <p>Хуманитарне акције и културни програм свако национално удружење води у својој средини, а објаве уноси само.</p>
+    </div>
+    <ul class="vrste-akt pojava">
+      <li><a href="#" aria-current="true">Све</a></li>
+      <li><a href="#">Споразуми</a></li>
+      <li><a href="#">Донације</a></li>
+      <li><a href="#">Изложбе</a></li>
+      <li><a href="#">Интервјуи и медији</a></li>
+    </ul>
+    <div class="vesti pojava">
+      <article class="vest">
+        <div class="vest__slika"><img src="img/potpisivanje-2008.jpg" alt="Потписивање споразума, Будимпешта 2008."></div>
+        <p class="vest__meta"><em>Споразуми</em><span>25. април 2008.</span></p>
+        <h3>Споразум са KMFAP у Будимпешти</h3>
+        <p>Међусобно признавање и сарадња са Малтешким редом — Федерацијом аутономних приората.</p>
+      </article>
+      <article class="vest">
+        <div class="vest__slika"><img src="img/pomoc-kombi.jpg" alt="Хуманитарна помоћ" style="object-position:center 60%"></div>
+        <p class="vest__meta"><em>Донације</em><span>Србија</span></p>
+        <h3>Помоћ Краљеву, Косову и Старој Пазови</h3>
+        <p>Пострадалима у земљотресу у Краљеву, деци избеглица са Косова и ратним војним инвалидима у Старој Пазови.</p>
+      </article>
+      <article class="vest">
+        <div class="vest__slika"><img src="img/novine-humanitarni-most.jpg" alt="Чланак „Хуманитарни мост“" style="object-position:top"></div>
+        <p class="vest__meta"><em>Медији</em><span>октобар 2017.</span></p>
+        <h3>„Хуманитарни мост“ у листу Вести</h3>
+        <p>Чланак о донацији немачког племића Геронтолошком центру и повељи витешког реда.</p>
+      </article>
+    </div>
+
+    <div class="galerija pojava" id="galerija">
+      <figure class="g-sv"><img src="img/kapitol.jpg" alt=""><figcaption>Свечана седница</figcaption></figure>
+      <figure class="g-v"><img src="img/fronc-plast.jpg" alt=""><figcaption>Проф. Фридрих Фронц</figcaption></figure>
+      <figure class="g-s"><img src="img/cer-trnovo-2005.jpg" alt=""><figcaption>Велико Трново, 2005.</figcaption></figure>
+      <figure class="g-v"><img src="img/fronc-par.jpg" alt=""><figcaption>Фридрих и Урсула Фронц</figcaption></figure>
+      <figure class="g-s"><img src="img/cer-bec-2004.jpg" alt=""><figcaption>Беч, 2004.</figcaption></figure>
+      <figure><img src="img/novine-vitezovi.jpg" alt="" style="object-position:top"><figcaption>„Витезови мека срца“</figcaption></figure>
+      <figure class="g-s"><img src="img/beograd-2002.jpg" alt=""><figcaption>Београд, 2002.</figcaption></figure>
+      <figure><img src="img/insignije.jpg" alt=""><figcaption>Инсигније</figcaption></figure>
+      <figure class="g-s"><img src="img/cer-sfantu-2014.jpg" alt=""><figcaption>Сфанту Ђорђе, 2014.</figcaption></figure>
+    </div>
+    <p style="margin-top:28px"><a class="veza" href="#">Цела фотогалерија →</a></p>
+  </div>
+</section>
+
+<!-- 11. Обележја и химна -->
+<section class="odeljak odeljak--bela" id="obelezja">
+  <div class="omot obelezja">
+    <div class="obelezja__slike pojava">
+      <figure class="visoka"><img src="img/insignije.jpg" alt="Инсигније и одликовања реда"></figure>
+      <figure><img src="img/plast.jpg" alt="Плашт реда" style="object-position:center 25%"></figure>
+      <figure><img src="img/zastava.jpg" alt="Застава реда"></figure>
+    </div>
+    <div class="pojava">
+      <span class="oznaka">Обележја</span>
+      <h2>Застава, плашт и химна</h2>
+      <p style="margin-top:1.3rem">На застави витешког реда у средини је велики малтешки крст кармин црвене боје, а у угловима мањи крстови са натписом <em>conciliis ad pacem</em>. На врху заставе су заставице држава чланица Савеза.</p>
+      <ul class="spisak-obelezja">
+        <li>Застава</li><li>Химна</li><li>Одећа</li><li>Инсигније</li><li>Одликовања</li>
+        <li>Повеља</li><li>Декрет</li><li>Чланска карта</li><li>Печат</li><li>Значка</li>
+      </ul>
+      <div class="himna" id="himna">
+        <audio preload="metadata" src="himna-pregled.mp3"></audio>
+        <button class="himna__dugme" type="button" aria-label="Пусти химну">
+          <svg class="ik-play" width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M0 0l14 8-14 8z" fill="currentColor"/></svg>
+          <svg class="ik-pauza" width="14" height="16" viewBox="0 0 14 16" aria-hidden="true" hidden><path d="M0 0h4v16H0zM10 0h4v16h-4z" fill="currentColor"/></svg>
+        </button>
+        <div class="himna__info"><b>Химна PCO</b><small>Четири дела</small></div>
+        <div class="himna__traka">
+          <div class="himna__napredak" role="slider" aria-label="Положај у снимку"><i></i></div>
+          <span class="himna__vreme">0:00 / 8:25</span>
+        </div>
+        <div class="himna__delovi">
+          <button type="button" data-od="0">Део 1</button>
+          <button type="button" data-od="60.4">Део 2</button>
+          <button type="button" data-od="159.8">Део 3</button>
+          <button type="button" data-od="347.5">Део 4</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Чланство + обрасци -->
+<section class="odeljak" id="clanstvo">
+  <div class="omot clanstvo">
+    <div class="pojava">
+      <span class="oznaka">Чланство</span>
+      <h2>Ко може постати члан</h2>
+      <p style="margin-top:1.4rem">Члан националног удружења може бити свако пунолетно лице које поднесе молбу за пријем и које предложе два гаранта са витешким статусом.</p>
+      <ul class="uslovi">
+        <li><span>✜</span> Да је поштован у средини где живи и ради</li>
+        <li><span>✜</span> Да је стручан у својој професији и има добре препоруке</li>
+        <li><span>✜</span> Да није осуђиван за кривична дела</li>
+        <li><span>✜</span> Да је одговоран и вредан у послу</li>
+        <li><span>✜</span> Да је комуникативан и способан за тимски рад</li>
+      </ul>
+    </div>
+    <div class="pojava">
+      <blockquote class="zakletva">„Својим учлањењем прихватам циљеве витешког реда, замисао за узајамно разумевање међу народима, истински хуманизам и залагање за свеопшти мир.“
+        <cite>Из заклетве која се полаже на инвеститури</cite></blockquote>
+      <span class="oznaka oznaka--tiha" id="obrasci">Обрасци</span>
+      <ul class="obrasci">
+        <li><a href="#">Молба за пријем у чланство <span>PDF</span></a></li>
+        <li><a href="#">Изјава о приступању Савезу <span>PDF</span></a></li>
+        <li><a href="#">Чланска карта — образац <span>PDF</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Вести и планови -->
+<section class="odeljak odeljak--linija" id="vesti">
+  <div class="omot">
+    <div class="odeljak__glava pojava">
+      <span class="oznaka">Вести и планови</span>
+      <h2>Најаве</h2>
+    </div>
+    <div class="najave pojava">
+      <article class="najava"><time>2027.</time><h3>Наредна инвеститура <span class="primer">Пример</span></h3><p>Место и датум одређује Велики капитол. Обавештење ће бити објављено овде.</p></article>
+      <article class="najava"><time>—</time><h3>Скупштина Савеза <span class="primer">Пример</span></h3><p>Редовна годишња седница представника националних удружења.</p></article>
+      <article class="najava"><time>—</time><h3>Хуманитарна акција <span class="primer">Пример</span></h3><p>Вести уносе национална удружења за акције које сама организују.</p></article>
+    </div>
+  </div>
+</section>
+
+<footer class="podnozje">
+  <div class="omot">
+    <div class="podnozje__mreza">
+      <div>
+        <h4>Савез</h4>
+        <p class="podnozje__ime">Међународна асоцијација националних витешких редова<br>Pro Concordatia Populorum</p>
+        <p style="margin-bottom:.4em">Нишка 44, 11050 Београд, Србија</p>
+        <p><a href="mailto:info@pco-international.org">info@pco-international.org</a></p>
+      </div>
+      <div>
+        <h4>О реду</h4>
+        <ul>
+          <li><a href="#slovo">Уводно слово</a></li>
+          <li><a href="#registracija">Подаци о регистрацији</a></li>
+          <li><a href="#statut">Статут</a></li>
+          <li><a href="#ustrojstvo">Организациона шема</a></li>
+          <li><a href="#rukovodstvo">Руководство</a></li>
+          <li><a href="#obelezja">Химна и обележја</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Рад реда</h4>
+        <ul>
+          <li><a href="#hronika">PCO Хроника</a></li>
+          <li><a href="#ceremonije">Церемоније</a></li>
+          <li><a href="#aktivnosti">Активности</a></li>
+          <li><a href="#vesti">Вести и планови</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Архива</h4>
+        <ul>
+          <li><a href="#arhiva">Документи и повеље</a></li>
+          <li><a href="#arhiva">Захвалнице</a></li>
+          <li><a href="#arhiva">Новински записи</a></li>
+          <li><a href="#galerija">Фотогалерија</a></li>
+          <li><a href="#obrasci">Обрасци</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="podnozje__dno">
+      <span>© 2026 Ordines Internationales Pro Concordatia Populorum</span>
+      <span class="podnozje__moto">conciliis ad pacem</span>
+    </div>
+  </div>
+</footer>
+
+<div class="citac" id="citac" role="dialog" aria-modal="true" aria-label="PCO Хроника">
+  <div class="citac__vrh"><span>PCO ХРОНИКА · 2020</span><button class="citac__zatvori" type="button">Затвори ✕</button></div>
+  <div class="citac__strane">
+      <img src="hronika/s-01.jpg" alt="Страна 1">
+      <img src="hronika/s-02.jpg" alt="Страна 2">
+      <img src="hronika/s-03.jpg" alt="Страна 3">
+      <img src="hronika/s-04.jpg" alt="Страна 4">
+      <img src="hronika/s-05.jpg" alt="Страна 5">
+      <img src="hronika/s-06.jpg" alt="Страна 6">
+      <img src="hronika/s-07.jpg" alt="Страна 7">
+      <img src="hronika/s-08.jpg" alt="Страна 8">
+      <img src="hronika/s-09.jpg" alt="Страна 9">
+      <img src="hronika/s-10.jpg" alt="Страна 10">
+      <img src="hronika/s-11.jpg" alt="Страна 11">
+      <img src="hronika/s-12.jpg" alt="Страна 12">
+      <img src="hronika/s-13.jpg" alt="Страна 13">
+      <img src="hronika/s-14.jpg" alt="Страна 14">
+      <img src="hronika/s-15.jpg" alt="Страна 15">
+      <img src="hronika/s-16.jpg" alt="Страна 16">
+      <img src="hronika/s-17.jpg" alt="Страна 17">
+      <img src="hronika/s-18.jpg" alt="Страна 18">
+      <img src="hronika/s-19.jpg" alt="Страна 19">
+      <img src="hronika/s-20.jpg" alt="Страна 20">
+      <img src="hronika/s-21.jpg" alt="Страна 21">
+      <img src="hronika/s-22.jpg" alt="Страна 22">
+      <img src="hronika/s-23.jpg" alt="Страна 23">
+      <img src="hronika/s-24.jpg" alt="Страна 24">
+      <img src="hronika/s-25.jpg" alt="Страна 25">
+      <img src="hronika/s-26.jpg" alt="Страна 26">
+      <img src="hronika/s-27.jpg" alt="Страна 27">
+      <img src="hronika/s-28.jpg" alt="Страна 28">
+      <img src="hronika/s-29.jpg" alt="Страна 29">
+      <img src="hronika/s-30.jpg" alt="Страна 30">
+      <img src="hronika/s-31.jpg" alt="Страна 31">
+      <img src="hronika/s-32.jpg" alt="Страна 32">
+      <img src="hronika/s-33.jpg" alt="Страна 33">
+      <img src="hronika/s-34.jpg" alt="Страна 34">
+      <img src="hronika/s-35.jpg" alt="Страна 35">
+      <img src="hronika/s-36.jpg" alt="Страна 36">
+      <img src="hronika/s-37.jpg" alt="Страна 37">
+      <img src="hronika/s-38.jpg" alt="Страна 38">
+      <img src="hronika/s-39.jpg" alt="Страна 39">
+      <img src="hronika/s-40.jpg" alt="Страна 40">
+      <img src="hronika/s-41.jpg" alt="Страна 41">
+      <img src="hronika/s-42.jpg" alt="Страна 42">
+      <img src="hronika/s-43.jpg" alt="Страна 43">
+      <img src="hronika/s-44.jpg" alt="Страна 44">
+      <img src="hronika/s-45.jpg" alt="Страна 45">
+      <img src="hronika/s-46.jpg" alt="Страна 46">
+      <img src="hronika/s-47.jpg" alt="Страна 47">
+      <img src="hronika/s-48.jpg" alt="Страна 48">
+      <img src="hronika/s-49.jpg" alt="Страна 49">
+      <img src="hronika/s-50.jpg" alt="Страна 50">
+      <img src="hronika/s-51.jpg" alt="Страна 51">
+      <img src="hronika/s-52.jpg" alt="Страна 52">
+      <img src="hronika/s-53.jpg" alt="Страна 53">
+      <img src="hronika/s-54.jpg" alt="Страна 54">
+    <button class="citac__str citac__str--naz" type="button" aria-label="Претходна страна">‹</button>
+    <button class="citac__str citac__str--nap" type="button" aria-label="Следећа страна">›</button>
+  </div>
+  <div class="citac__dno"><span class="citac__broj">1 / 54</span></div>
+</div>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.pojava');
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('vidi')});return;
+  }
+  var io=new IntersectionObserver(function(us){us.forEach(function(u){
+    if(u.isIntersecting){u.target.classList.add('vidi');io.unobserve(u.target)}})},
+    {threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+  var c=document.getElementById('citac');
+  if(c){
+    var st=c.querySelectorAll('.citac__strane img'),n=0,br=c.querySelector('.citac__broj');
+    var idi=function(k){n=Math.max(0,Math.min(st.length-1,k));st.forEach(function(e,i){e.classList.toggle('tu',i===n)});br.textContent=(n+1)+' / '+st.length};
+    var otvori=function(){c.setAttribute('open','');document.body.style.overflow='hidden';idi(n)};
+    var zatvori=function(){c.removeAttribute('open');document.body.style.overflow=''};
+    document.querySelectorAll('[data-citac]').forEach(function(b){b.addEventListener('click',otvori)});
+    c.querySelector('.citac__zatvori').addEventListener('click',zatvori);
+    c.querySelector('.citac__str--naz').addEventListener('click',function(){idi(n-1)});
+    c.querySelector('.citac__str--nap').addEventListener('click',function(){idi(n+1)});
+    document.addEventListener('keydown',function(e){if(!c.hasAttribute('open'))return;
+      if(e.key==='Escape')zatvori();if(e.key==='ArrowRight')idi(n+1);if(e.key==='ArrowLeft')idi(n-1)});
+    var x0=null;c.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+    c.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;
+      if(Math.abs(dx)>40)idi(n+(dx<0?1:-1));x0=null});
+  }
+  var h=document.getElementById('himna');
+  if(h){
+    var a=h.querySelector('audio'),btn=h.querySelector('.himna__dugme'),bar=h.querySelector('.himna__napredak'),
+        fill=bar.querySelector('i'),vr=h.querySelector('.himna__vreme'),delovi=h.querySelectorAll('.himna__delovi button');
+    var fmt=function(t){t=Math.floor(t||0);return Math.floor(t/60)+':'+('0'+t%60).slice(-2)};
+    var pu=function(on){h.querySelector('.ik-play').hidden=on;h.querySelector('.ik-pauza').hidden=!on;
+      btn.setAttribute('aria-label',on?'Заустави химну':'Пусти химну')};
+    btn.addEventListener('click',function(){a.paused?a.play():a.pause()});
+    a.addEventListener('play',function(){pu(true)});a.addEventListener('pause',function(){pu(false)});
+    a.addEventListener('timeupdate',function(){
+      var d=a.duration||505;fill.style.width=(a.currentTime/d*100)+'%';vr.textContent=fmt(a.currentTime)+' / '+fmt(d);
+      delovi.forEach(function(b,i){var od=+b.dataset.od,do_=delovi[i+1]?+delovi[i+1].dataset.od:1e9;
+        b.setAttribute('aria-pressed',a.currentTime>=od&&a.currentTime<do_?'true':'false')})});
+    bar.addEventListener('click',function(e){var r=bar.getBoundingClientRect();a.currentTime=(e.clientX-r.left)/r.width*(a.duration||505)});
+    delovi.forEach(function(b){b.addEventListener('click',function(){a.currentTime=+b.dataset.od;a.play()})});
+  }
+  document.querySelectorAll('.mobilni a').forEach(function(a){
+    a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})});
+})();
+</script>
+</body>
+</html>
